@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   def self.update_all_user
     User.all.each do |user|
-      binding.pry
       next if user.modify_name.blank? || user.prefecture_id.blank?
       tenki = Tenki.new(user.prefecture_id)
 

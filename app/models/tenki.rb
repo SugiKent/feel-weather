@@ -21,7 +21,7 @@ class Tenki
 
   def emoji
     moji = ''
-    if icon[3] == 'n'
+    if icon[2] == 'n'
       moji = "\u{1F31F}"
     else
       case icon
