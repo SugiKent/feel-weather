@@ -34,6 +34,8 @@ class User < ApplicationRecord
       tenki = Tenki.new(user.prefecture_id)
 
       user.update_name(tenki)
+
+      sleep(1)
     end
   end
 
