@@ -1,3 +1,5 @@
+set :output, 'log/crontab.log'
+set :environment, :production
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
