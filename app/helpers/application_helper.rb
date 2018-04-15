@@ -11,7 +11,7 @@ module ApplicationHelper
         title: :title,
         type: 'website',
         url: 'http://tenki.popapp.me/',
-        image: image_url("tenki.jpeg"),
+        image: image_url("tenki.jpg"),
         site_name: :site,
         description: :description,
         locale: 'ja_JP'
@@ -21,7 +21,7 @@ module ApplicationHelper
         site: '@sugiken_bike',
         card: 'summary',
         description: :description,
-        image: image_url("tenki.jpeg"),
+        image: image_url("tenki.jpg"),
         url: :url
       }
     }
