@@ -1,0 +1,15 @@
+nav
+  .nav-wrapper
+    = link_to 'FEEL WEATHER', root_path, class: "bland-logo center"
+    ul.right
+      - if user_signed_in?
+        li
+          = current_user.username
+          | さん
+        li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete
+      - else
+        li
+          = link_to "Twitterで登録", user_twitter_omniauth_authorize_path
+        li
+          = link_to 'ログイン', user_twitter_omniauth_authorize_path

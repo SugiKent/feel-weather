@@ -1,0 +1,32 @@
+.section
+  blockquote
+    | Twitterのユーザー名と天気を連携させます。
+    br
+    | 「-tenki-」のところが現在の天気の絵文字になります。
+    br
+    | 例）杉田_-tenki-_賢人 => 「杉田_☀️_賢人」
+    br
+    | ＊更新は15分ごとです。
+= form_with model: current_user, local: true do |f|
+  .row
+    .input-field.col.s12
+      i.material-icons.prefix
+        | explore
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "あなたの都道府県を教えてね！"}
+      label
+        | 都道府県
+  .row
+    .input-field.col.s12
+      i.material-icons.prefix
+        | create
+      = f.text_field :modify_name, placeholder: '変更後の名前を入力してね！'
+  .center.col.s12
+    = button_tag :type => "submit", :class =>"btn waves-effect waves-light yellow darken-4" do
+      | 保存
+      i.material-icons.right
+        | send
+
+javascript:
+  $(document).ready(function(){
+    $('select').material_select();
+  });

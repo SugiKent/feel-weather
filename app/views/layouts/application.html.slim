@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title
+      | お天気Twitter
+    - if Rails.env == 'production'
+      = render 'share/analytics'
+    = display_meta_tags default_meta_tags
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"
+
+    = stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application', defer: true
+    = csrf_meta_tags
+  body
+    = render 'share/header'
+    .container
+      - flash.each do |key, value|
+        .section
+          .card-panel.blue-grey.darken-1
+            span.white-text
+              = value
+      .section
+        = yield

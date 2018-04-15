@@ -1,0 +1,31 @@
+.row
+  .col.s12.m6.offset-m3
+    .card
+      .card-image
+        = image_tag "sunny.jpg"
+        span.card-title
+          | FEEL WEATHER
+      .card-content
+        p
+          | 『FEEL WEATHER』はあなたの都道府県と名前を設定するだけで、アカウント名に現在のお天気を埋め込めます。
+          br
+          | お天気は15分おきに反映されます。
+      .card-action
+        = link_to "Twitterで登録", user_twitter_omniauth_authorize_path, class: "waves-effect waves-light btn yellow darken-4"
+        p
+          | 当サービスがユーザーの許可なしにツイートすることはありません。
+
+.row
+  .col.s12.m6.offset-m3
+    blockquote
+      | Twitterのユーザー名と天気を連携させます。
+      br
+      | 「-tenki-」のところが現在の天気の絵文字になります。
+      br
+      | 例）杉田_-tenki-_賢人 => 「杉田_☀️_賢人」
+      br
+      | ＊更新は15分ごとです。
+    p
+      | 当サービスとの連携解除は簡単にできます。
+      a href="https://syncer.jp/twitter-how-to-setting-connect-application"
+        | 方法はこちら
