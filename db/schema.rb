@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20180414211236) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
@@ -38,7 +37,6 @@ ActiveRecord::Schema.define(version: 20180414211236) do
     t.integer "prefecture_id"
     t.string "token"
     t.string "secret"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
