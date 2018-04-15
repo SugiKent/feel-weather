@@ -63,11 +63,11 @@
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
 
-role :app, %w{ec2-user@13.230.224.16
-role :web, %w{ec2-user@13.230.224.16}
-role :db,  %w{ec2-user@13.230.224.16}
+role :app, %w{ec2-user@54.250.31.229}
+role :web, %w{ec2-user@54.250.31.229}
+role :db,  %w{ec2-user@54.250.31.229}
 
-server '13.230.224.16', user: 'ec2-user', roles: %w{web app}
+server '54.250.31.229', user: 'ec2-user', roles: %w{web app}
 
 set :ssh_options, {
   keys: %w(~/.ssh/otenki.pem),
