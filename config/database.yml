@@ -51,7 +51,7 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: otenki-twi_production
+  database: otenki_production
   username: root
   password:
   socket: /var/lib/mysql/mysql.sock
