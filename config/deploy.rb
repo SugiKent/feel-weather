@@ -15,6 +15,9 @@ set :rbenv_ruby, '2.4.1'
 
 set :log_level, :debug
 
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -48,6 +51,17 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
+
+  desc 'db_seed'
+  task :db_seed do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
     end
   end
 end
