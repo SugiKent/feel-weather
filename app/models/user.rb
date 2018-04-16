@@ -33,6 +33,8 @@ class User < ApplicationRecord
       next if user.modify_name.blank? || user.prefecture_id.blank?
       tenki = Tenki.new(user.prefecture_id)
 
+      next if tenki.emoji.blank?
+
       user.update_name(tenki)
 
       sleep(1)
@@ -41,7 +43,7 @@ class User < ApplicationRecord
 
   def update_name(tenki)
     modify_name = self.modify_name
-    modified_name = modify_name.sub(/-tenki-/, tenki.emoji)
+    modified_name = modify_name.gsub(/-tenki-/, tenki.emoji)
 
     consumer = OAuth::Consumer.new(ENV['TWITTER_APIKEY'], ENV['TWITTER_APISECRET'], site: "https://api.twiter.com")
     endpoint = OAuth::AccessToken.new(consumer, self.token, self.secret)

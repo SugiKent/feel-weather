@@ -9,6 +9,8 @@ class Tenki
 
     json = Net::HTTP.get(uri)
     @result = JSON.parse(json)
+
+    p @result
   end
 
   def now
