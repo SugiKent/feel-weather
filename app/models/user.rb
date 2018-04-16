@@ -34,8 +34,9 @@ class User < ApplicationRecord
     puts '名前のアップデートを開始するよ。'
 
     User.all.each do |user|
-      puts user.username
       puts '-------------------------------'
+
+      puts user.username
 
       next if user.modify_name.blank? || user.prefecture_id.blank?
       tenki = Tenki.new(user.prefecture_id)
