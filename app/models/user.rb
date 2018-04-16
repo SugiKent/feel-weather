@@ -35,7 +35,7 @@ class User < ApplicationRecord
       next if user.modify_name.blank? || user.prefecture_id.blank?
       tenki = Tenki.new(user.prefecture_id)
 
-      next if tenki.emoji.blank?
+      next if tenki.not_found
 
       user.update_name(tenki)
 

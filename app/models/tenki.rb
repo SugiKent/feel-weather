@@ -3,14 +3,22 @@ require 'uri'
 require 'json'
 
 class Tenki
+
+  attr_accessor :not_found
+
   def initialize(prefecture_id)
     prefecture = Prefecture.find(prefecture_id).eng_name
     uri = URI.parse("http://api.openweathermap.org/data/2.5/weather?q=#{prefecture}&appid=9c93238d31dd0302c51d587cb1ec6b21")
 
     json = Net::HTTP.get(uri)
     @result = JSON.parse(json)
-
     p @result
+
+    @not_found = false
+    if @result['message'] == 'city not found'
+      @not_found = true
+      p prefecture_id + 'は対応しておりません。'
+    end
   end
 
   def now
