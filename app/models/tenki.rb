@@ -65,4 +65,16 @@ class Tenki
     moji
   end
 
+  def self.test_prefecture
+    Prefecture.all.each do |prefecture|
+      uri = URI.parse("http://api.openweathermap.org/data/2.5/weather?q=#{prefecture.capital_name}&appid=9c93238d31dd0302c51d587cb1ec6b21")
+
+      json = Net::HTTP.get(uri)
+      @result = JSON.parse(json)
+      p @result
+
+      sleep(1)
+    end
+  end
+
 end
