@@ -53,5 +53,7 @@ class User < ApplicationRecord
     res = endpoint.post('https://api.twitter.com/1.1/account/update_profile.json', name: modified_name)
 
     p res
+
+    puts '-------------------------------'
   end
 end
