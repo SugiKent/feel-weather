@@ -49,11 +49,11 @@ class Tenki
     when '04' #曇りClouds
       moji = "\u{2601}"
     when '09' #小雨Drizzle/Rain
-      moji = "\u{1F302}"
+      moji = "\u{2602}"
     when '10' #雨Rain
-      moji = "\u{2614}"
+      moji = "\u{1F327}"
     when '11' #雷Thunderstorm
-      moji = "\u{26A1}"
+      moji = "\u{26C8}"
     when '13' #雪Snow/freezing rain
       moji = "\u{2744}"
     when '50' #霧/Atmosphere
