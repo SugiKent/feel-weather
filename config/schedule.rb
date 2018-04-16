@@ -21,6 +21,6 @@ set :environment, :production
 
 # Learn more: http://github.com/javan/whenever
 
-every 15.minutes do
+every 5.minutes do
   runner 'User.update_all_user'
 end
