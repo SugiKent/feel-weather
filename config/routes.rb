@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :settings, only: %i(index)
   resources :users, only: %i(update)
+  
+  get "test_exception_notifier" => "application#test_exception_notifier"
 end
