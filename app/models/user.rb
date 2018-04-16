@@ -31,7 +31,10 @@ class User < ApplicationRecord
   end
 
   def self.update_all_user
+    puts '名前のアップデートを開始するよ。'
+
     User.all.each do |user|
+      puts user.username
       next if user.modify_name.blank? || user.prefecture_id.blank?
       tenki = Tenki.new(user.prefecture_id)
 
@@ -41,6 +44,8 @@ class User < ApplicationRecord
 
       sleep(1)
     end
+
+    puts '名前のアップデートが終了したよ。'
   end
 
   def update_name(tenki)
