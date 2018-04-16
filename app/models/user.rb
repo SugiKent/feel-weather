@@ -51,5 +51,7 @@ class User < ApplicationRecord
     endpoint = OAuth::AccessToken.new(consumer, self.token, self.secret)
 
     res = endpoint.post('https://api.twitter.com/1.1/account/update_profile.json', name: modified_name)
+
+    p res
   end
 end
