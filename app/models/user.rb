@@ -4,6 +4,8 @@ require 'net/https'
 
 class User < ApplicationRecord
 
+  belongs_to :prefecture
+
   FUNCTION_TYPE = ['tenki']
 
   # Include default devise modules. Others available are:

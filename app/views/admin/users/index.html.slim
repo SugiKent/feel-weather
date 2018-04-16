@@ -1,0 +1,18 @@
+table.striped
+  thead
+    tr
+      th ユーザー名
+      th 変更後の名前
+      th 都道府県
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.username
+        td
+          = user.modify_name
+        td
+          - if user.prefecture.present?
+            = user.prefecture.name
+          - else
+            | 都道府県が登録されてないよ！
