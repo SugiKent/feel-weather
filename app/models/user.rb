@@ -35,7 +35,6 @@ class User < ApplicationRecord
 
     User.all.each do |user|
       puts user.username
-
       puts '-------------------------------'
 
       next if user.modify_name.blank? || user.prefecture_id.blank?

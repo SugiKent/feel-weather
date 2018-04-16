@@ -7,7 +7,7 @@ class Tenki
   attr_accessor :not_found
 
   def initialize(prefecture_id)
-    prefecture = Prefecture.find(prefecture_id).eng_name
+    prefecture = Prefecture.find(prefecture_id).capital_name
     uri = URI.parse("http://api.openweathermap.org/data/2.5/weather?q=#{prefecture}&appid=9c93238d31dd0302c51d587cb1ec6b21")
 
     json = Net::HTTP.get(uri)
