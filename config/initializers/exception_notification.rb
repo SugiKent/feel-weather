@@ -17,6 +17,8 @@ ExceptionNotification.configure do |config|
 
   # Email notifier sends notifications by email.
 
+  config.ignored_exceptions = ""
+
    config.add_notifier :slack, {
     :webhook_url => "https://hooks.slack.com/services/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",
     :channel => "#error"
