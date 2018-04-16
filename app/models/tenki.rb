@@ -49,7 +49,7 @@ class Tenki
     when '04' #曇りClouds
       moji = "\u{2601}"
     when '09' #小雨Drizzle/Rain
-      moji = "\u{2602}"
+      moji = "\u{2614}"
     when '10' #雨Rain
       moji = "\u{1F327}"
     when '11' #雷Thunderstorm
