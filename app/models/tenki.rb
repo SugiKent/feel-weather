@@ -17,7 +17,7 @@ class Tenki
     @not_found = false
     if @result['message'] == 'city not found'
       @not_found = true
-      p prefecture_id + 'は対応しておりません。'
+      p prefecture_id.to_s + 'は対応しておりません。'
     end
   end
 
