@@ -38,7 +38,9 @@ class Tenki
     case @result['weather'][0]['id']
     when 781
       emoji = "\u{1F300}"
-    when [701, 741]
+    when 701
+      emoji = "\u{2614}"
+    when 741
       emoji = "\u{2601}"
     else
       emoji = "\u{1F301}"
