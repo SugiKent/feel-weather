@@ -33,6 +33,20 @@ class Tenki
     @result['weather'][0]['id']
   end
 
+  def atmosphere_emoji
+    emoji = ''
+    case @result['weather'][0]['id']
+    when 781
+      emoji = "\u{1F300}"
+    when [701, 741]
+      emoji = "\u{2601}"
+    else
+      emoji = "\u{1F301}"
+    end
+
+    emoji
+  end
+
   def emoji
     moji = ''
     case icon[0..1]
@@ -57,7 +71,7 @@ class Tenki
     when '13' #雪Snow/freezing rain
       moji = "\u{2744}"
     when '50' #霧/Atmosphere
-      moji = "\u{1F301}"
+      moji = atmosphere_emoji
     else
       moji = "\u{2600}"
     end
