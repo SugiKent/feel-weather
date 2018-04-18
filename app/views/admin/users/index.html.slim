@@ -13,7 +13,8 @@ table.striped
     - @users.each do |user|
       tr
         td
-          = user.username
+          a href="https://twitter.com/#{user.username}?lang=ja"
+            = user.username
         td
           = user.modify_name
         td
