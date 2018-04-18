@@ -1,12 +1,5 @@
 .section
-  blockquote
-    | Twitterのユーザー名と天気を連携させます。
-    br
-    | 「-tenki-」のところが現在の天気の絵文字になります。
-    br
-    | 例）杉田_-tenki-_賢人 => 「杉田_☀️_賢人」
-    br
-    | ＊更新は10分ごとです。
+  = render 'how_to'
 = form_with model: current_user, local: true do |f|
   .row
     .input-field.col.s12
@@ -45,58 +38,7 @@
 .section
   .row
     .col.s10.offset-s1.m4.offset-m4
-      ul.collection.with-header
-        li.collection-header
-          h4
-            | 絵文字対応表
-          p
-            | Twitterのアプリやweb版、スマホの違いで微妙にデザインが変わります。
-        li.collection-item
-          div
-            | 晴れ
-            a.secondary-content href=""
-              = "\u{2600}"
-        li.collection-item
-          div
-            | 夜晴れ
-            a.secondary-content href=""
-              = "\u{1F31F}"
-        li.collection-item
-          div
-            | 晴れときどき曇り
-            a.secondary-content href=""
-              = "\u{26C5}"
-        li.collection-item
-          div
-            | 曇り
-            a.secondary-content href=""
-              = "\u{2601}"
-        li.collection-item
-          div
-            | 小雨
-            a.secondary-content href=""
-              = "\u{2614}"
-        li.collection-item
-          div
-            | 雨
-            a.secondary-content href=""
-              = "\u{1F327}"
-        li.collection-item
-          div
-            | 雷雨
-            a.secondary-content href=""
-              = "\u{26C8}"
-        li.collection-item
-          div
-            | 雪
-            a.secondary-content href=""
-              = "\u{2744}"
-        li.collection-item
-          div
-            | 霧
-            a.secondary-content href=""
-              = "\u{1F301}"
-
+      = render 'otenki_table'
 javascript:
   $(document).ready(function(){
     $('select').material_select();

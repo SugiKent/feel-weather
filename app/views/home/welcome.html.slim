@@ -17,18 +17,15 @@
 
 .row
   .col.s12.m6.offset-m3
-    blockquote
-      | Twitterのユーザー名と天気を連携させます。
-      br
-      | 「-tenki-」のところが現在の天気の絵文字になります。
-      br
-      | 例）杉田_-tenki-_賢人 => 「杉田_☀️_賢人」
-      br
-      | ＊更新は10分ごとです。
+    = render 'settings/how_to'
     p
       | 当サービスとの連携解除は簡単にできます。
       a href="https://syncer.jp/twitter-how-to-setting-connect-application"
         | 方法はこちら
+
+.row
+  .col.s10.offset-s1.m4.offset-m4
+    = render 'settings/otenki_table'
 
 .fixed-action-btn
   a.btn-floating.btn-large.waves-effect.waves-light.light-blue.darken-1.pulse href="http://twitter.com/share?url=http://otenki.popapp.me/&text=FEEL WEATHERを始めました！現在の天気をアカウント名に！" target="_blank"
